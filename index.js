@@ -348,3 +348,24 @@ var obj = {
 }
 var normalFunc = obj.getValue2();
 normalFunc(); // obj
+
+
+//? Filter (return new array after filter)
+
+var numbersArray = [1, -1, 2, 3];
+var filterArray = numbersArray.filter(n => n > 0);
+console.log(filterArray);
+
+//? Map (Return new array after modification)
+
+var mapArray = filterArray.map(m => {
+    return { value: m } // creating obj with value property
+    // obj create na korle return er dorkar hotona
+});
+console.log(mapArray);
+
+//? Chaining filter and map
+
+let chain = mapArray.filter(f => f.value > 1) // filter out value of 1
+    .map(m => m.value * 10); // 2,3 is multipling with 10 and return new array [20,30]
+console.log(chain);
